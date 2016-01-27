@@ -4,6 +4,7 @@ import static org.junit.Assert.assertEquals;
 import static org.junit.Assert.fail;
 
 import java.io.File;
+import java.util.Set;
 
 import org.dbunit.IDatabaseTester;
 import org.dbunit.JdbcDatabaseTester;
@@ -51,7 +52,10 @@ public class DAOTest {
    */
   @Test
   public void testGetBenutzerByName() {
-    fail();
+    DAO dao = new DAO();
+    Set<BenutzerDTO> b = dao.getBenutzerByName("Adalbert Alt");
+    assertEquals(1, b.size());
+    
   }
 
   /** 
